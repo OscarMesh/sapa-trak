@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="index.css" />
+    <script src="index.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sapa-trak</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>SAPA-TRAK</h1>
+      </div>
+
+      <div class="balance">
+        <p>Available Balance</p>
+        <div class="amt">
+          <img src="naira.svg" alt="currency" />
+          <p>30,000</p>
+        </div>
+      </div>
+      <!-- income and expense section -->
+      <div class="inc-exp">
+        <div class="inc">
+          <p>Income</p>
+          <div class="amt">
+            <img src="naira.svg" alt="currency" />
+            <p>30,000</p>
+          </div>
+        </div>
+        <img src="rectangle.svg" alt="">
+        <div class="exp">
+          <p>Expenses</p>
+          <div class="amt">
+            <img src="naira.svg" alt="currency" />
+            <p>30,000</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- transaction History -->
+
+      <h3>TRANSACTION HISTORY</h3>
+
+      <div class="gig">
+        <p>Design gig</p>
+        <div class="amt">
+          <img src="naira.svg" alt="currency" />
+          <p>30,000</p>
+          <img src="cancel.svg" alt="" />
+        </div>
+      </div>
+
+      <div class="shop">
+        <p>Shopping</p>
+        <div class="amt">
+          <img src="naira.svg" alt="currency" id="naira" />
+          <p>30,000</p>
+          <img src="cancel.svg" alt="cancle" />
+        </div>
+      </div>
+
+      <!-- Add transaction -->
+
+      <h3>ADD NEW TRANSACTION</h3>
+
+      <div class="form">
+        <div class="name">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" />
+        </div>
+        <div class="price">
+          <label for="price">Price</label>
+          <input type="number" id="price" name="price" />
+        
+        </div>
+      </div>
+
+      <!-- buttons -->
+      <div class="buttons">
+        <button id="add-inc">ADD INCOME</button>
+        <button id="add-exp">ADD EXPENSE</button>
+      </div>
+    </div>
+  </body>
+</html>
