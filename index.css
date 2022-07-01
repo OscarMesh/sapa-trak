@@ -55,7 +55,8 @@ body {
   background: #ffffff;
 }
 
-.balance p {
+.balance p,
+#balance {
   font-family: "Mulish";
   font-style: normal;
   font-weight: 500;
@@ -100,10 +101,20 @@ body {
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
-
-  color: #000000;
 }
 
+ #income {
+  text-align: center;
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: green;
+}
+.inc-exp .exp #expenses {
+  color: #6a0000;
+}
 .inc-exp .amt {
   display: flex;
   flex-direction: row;
@@ -131,6 +142,65 @@ h3 {
   );
 }
 
+/* transation history */
+#transactions {
+  list-style: none;
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+    background: #ffffff;
+     padding: 20px 35px;
+}
+
+#transactions li {
+  display: flex;
+   font-family: "Mulish";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+ border-bottom: 1.5px solid #4886e4;
+ padding-top: 20px;
+ padding-bottom: 20px;
+  gap: 10px;
+  background: #ffffff;
+  margin-bottom: 12px;
+}
+
+#transactions li div {
+ 
+ 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+#transactions li .income-amt {
+    font-family: "Mulish";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+
+  color: #000000;
+}
+
+#transactions li .expense-amt {
+    font-family: "Mulish";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+
+   color: #6a0000;
+}
+
+/* 
 .gig {
   display: flex;
   flex-direction: row;
@@ -164,7 +234,8 @@ h3 {
   align-items: center;
   gap: 10px;
 }
-.gig p {
+.gig p,
+ .income-amt {
   font-family: "Mulish";
   font-style: normal;
   font-weight: 500;
@@ -184,9 +255,9 @@ h3 {
   color: #000000;
 }
 
-.shop .amt p {
+.shop .amt .expense-amt {
   color: #6a0000;
-}
+} */
 
 .form {
   display: flex;
