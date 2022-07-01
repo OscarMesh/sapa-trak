@@ -103,7 +103,7 @@ body {
   line-height: 20px;
 }
 
- #income {
+#income {
   text-align: center;
   font-family: "Mulish";
   font-style: normal;
@@ -145,63 +145,62 @@ h3 {
 /* transation history */
 #transactions {
   list-style: none;
-   display: flex;
-   justify-content: center;
-   flex-direction: column;
-    background: #ffffff;
-     padding: 20px 35px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background: #ffffff;
+  padding: 20px 35px;
 }
 
 #transactions li {
   display: flex;
-   font-family: "Mulish";
+  font-family: "Mulish";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
-
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
- border-bottom: 1.5px solid #4886e4;
- padding-top: 20px;
- padding-bottom: 20px;
+  border-bottom: 1.5px solid #4886e4;
+  padding-top: 20px;
+  padding-bottom: 20px;
   gap: 10px;
   background: #ffffff;
   margin-bottom: 12px;
 }
 
 #transactions li div {
- 
- 
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   gap: 10px;
-  
 }
 
+#transactions img:hover {
+  background: #6a0000;
+  padding: 5px;
+}
 #transactions li .income-amt {
-    font-family: "Mulish";
+  font-family: "Mulish";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
-background: green;
-padding: 5px;
+  background: green;
+  padding: 5px;
   color: #ffffff;
 }
 
 #transactions li .expense-amt {
-    font-family: "Mulish";
+  font-family: "Mulish";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
-
-   background: #6a0000;
-   padding: 5px;
-   color: #ffffff;
+  background: #6a0000;
+  padding: 5px;
+  color: #ffffff;
 }
 
 /* 

@@ -5,6 +5,7 @@ var state = {
   transactions: [
     { name: "salary", amount: 30000, type: "income" },
     { name: "shopping", amount: 10000, type: "expense" },
+    { name: "shopping", amount: 10000, type: "expense" },
   ],
 };
 
