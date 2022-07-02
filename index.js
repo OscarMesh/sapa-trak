@@ -4,8 +4,6 @@ var state = {
   expenses: 10000,
   transactions: [
     { name: "salary", amount: 30000, type: "income" },
-    { name: "salary", amount: 30000, type: "income" },
-    { name: "shopping", amount: 10000, type: "expense" },
     { name: "shopping", amount: 10000, type: "expense" },
   ],
 };
@@ -14,10 +12,45 @@ var balanceEl = document.querySelector("#balance");
 var incomeEl = document.querySelector("#income");
 var expenseEl = document.querySelector("#expenses");
 var transactionsEl = document.querySelector("#transactions");
+var incomeBtnEl = document.querySelector("#add-inc");
+var expenseBtnEl = document.querySelector("#add-exp");
+var nameEl = document.querySelector("#name");
+var priceEl = document.querySelector("#price");
 
 function init() {
   updateState();
-  render();
+  BtnListiners();
+}
+
+function BtnListiners() {
+  incomeBtnEl.addEventListener("click", onAddIncome);
+  expenseBtnEl.addEventListener("click", onAddExpense);
+}
+
+function addTransaction(name, price, type) {
+  if (name !== "" && price !== "") {
+    var transaction = {
+      name: name,
+      amount: parseInt(price),
+      type: type,
+    };
+  } else {
+    alert("please enter a valid transaction");
+  }
+
+  nameEl.value = '';
+  priceEl.value = '';
+
+  state.transactions.push(transaction);
+
+  updateState();
+}
+function onAddIncome() {
+  addTransaction(nameEl.value, priceEl.value, "income");
+}
+
+function onAddExpense() {
+  addTransaction(nameEl.value, priceEl.value, "expense");
 }
 
 function updateState() {
@@ -41,7 +74,12 @@ function updateState() {
   state.balance = balance;
   state.income = income;
   state.expenses = expense;
-  
+
+  render();
+}
+
+function onDeleteClick (e) {
+  console.log(e);
 }
 
 function render() {
@@ -50,6 +88,8 @@ function render() {
   expenseEl.innerHTML = `#${state.expenses}`;
 
   var transactionEl, containerEl, amountEL, btnEl, item;
+
+  transactionsEl.innerHTML = "";
 
   for (var i = 0; i < state.transactions.length; i++) {
     item = state.transactions[i];
@@ -71,6 +111,8 @@ function render() {
     containerEl.appendChild(amountEL);
     btnEl = document.createElement("img");
     btnEl.src = "cancel.svg";
+
+    btnEl.addEventListener("click", onDeleteClick);
 
     containerEl.appendChild(btnEl);
     transactionEl.appendChild(containerEl);
