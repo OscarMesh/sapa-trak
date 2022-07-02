@@ -4,6 +4,7 @@ var state = {
   expenses: 10000,
   transactions: [
     { name: "salary", amount: 30000, type: "income" },
+    { name: "salary", amount: 30000, type: "income" },
     { name: "shopping", amount: 10000, type: "expense" },
     { name: "shopping", amount: 10000, type: "expense" },
   ],
@@ -23,7 +24,7 @@ function updateState() {
   var balance = 0,
     income = 0,
     expense = 0,
-  item;
+    item;
 
   for (var i = 0; i < state.transactions.length; i++) {
     item = state.transactions[i];
@@ -35,7 +36,12 @@ function updateState() {
     }
   }
 
-  console.log(balance, income, expense);
+  balance = income - expense;
+
+  state.balance = balance;
+  state.income = income;
+  state.expenses = expense;
+  
 }
 
 function render() {
