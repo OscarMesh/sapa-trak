@@ -3,8 +3,8 @@ var state = {
   income: 30000,
   expenses: 10000,
   transactions: [
-    { name: "salary", amount: 30000, type: "income" },
-    { name: "shopping", amount: 10000, type: "expense" },
+    { id: uniqueId(), name: "salary", amount: 30000, type: "income" },
+    {  id: uniqueId(), name: "shopping", amount: 10000, type: "expense" },
   ],
 };
 
@@ -78,8 +78,12 @@ function updateState() {
   render();
 }
 
+function uniqueId () {
+ return Math.round(Math.random()*1000000);
+}
+
 function onDeleteClick (e) {
-  console.log(e);
+ console.log(e.target);
 }
 
 function render() {
@@ -111,6 +115,8 @@ function render() {
     containerEl.appendChild(amountEL);
     btnEl = document.createElement("img");
     btnEl.src = "cancel.svg";
+    btnEl.setAttribute('data-id', item.id);
+    
 
     btnEl.addEventListener("click", onDeleteClick);
 
