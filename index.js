@@ -4,7 +4,7 @@ var state = {
   expenses: 10000,
   transactions: [
     { id: uniqueId(), name: "salary", amount: 30000, type: "income" },
-    {  id: uniqueId(), name: "shopping", amount: 10000, type: "expense" },
+    { id: uniqueId(), name: "shopping", amount: 10000, type: "expense" },
   ],
 };
 
@@ -38,8 +38,8 @@ function addTransaction(name, price, type) {
     alert("please enter a valid transaction");
   }
 
-  nameEl.value = '';
-  priceEl.value = '';
+  nameEl.value = "";
+  priceEl.value = "";
 
   state.transactions.push(transaction);
 
@@ -78,12 +78,22 @@ function updateState() {
   render();
 }
 
-function uniqueId () {
- return Math.round(Math.random()*1000000);
+function uniqueId() {
+  return Math.round(Math.random() * 1000000);
 }
 
-function onDeleteClick (e) {
- console.log(e.target);
+function onDeleteClick(e) {
+  var id = e.target.getAttribute("data-id");
+  var deleteIndex;
+  for (var i = 0; i < state.transactions.length; i++) {
+    if (state.transactions[i].id === id) {
+      deleteIndex = 1;
+      break;
+    }
+    state.transactions.splice(deleteIndex, 1);
+
+    updateState();
+  }
 }
 
 function render() {
@@ -115,8 +125,7 @@ function render() {
     containerEl.appendChild(amountEL);
     btnEl = document.createElement("img");
     btnEl.src = "cancel.svg";
-    btnEl.setAttribute('data-id', item.id);
-    
+    btnEl.setAttribute("data-id", item.id);
 
     btnEl.addEventListener("click", onDeleteClick);
 
