@@ -25,7 +25,7 @@ body {
 
 .header {
   align-items: center;
-  padding: 20px 225px;
+  padding: 10px 150px;
   background: linear-gradient(
     270deg,
     rgba(72, 134, 228, 0.685982) 0%,
@@ -36,6 +36,7 @@ body {
 }
 
 .header h1 {
+  text-align: center;
   font-family: "Mulish";
   font-style: normal;
   font-weight: 900;
@@ -46,11 +47,14 @@ body {
   padding: 20px;
   background: #ffffff;
 }
+.header h1 span {
+  color: red;
+}
 
 .balance {
   display: flex;
   flex-direction: row;
-  padding: 20px 35px;
+  padding: 10px 35px;
   justify-content: space-between;
   background: #ffffff;
 }
@@ -202,7 +206,13 @@ h3 {
   padding: 5px;
   color: #ffffff;
 }
-
+ p{
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-family: 'Mulish';
+  font-weight: 600;
+  font-size: 18px;
+ }
 /* 
 .gig {
   display: flex;
