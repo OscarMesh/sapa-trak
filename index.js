@@ -3,8 +3,7 @@ var state = {
   income: 30000,
   expenses: 10000,
   transactions: [
-    { id: uniqueId(), name: "salary", amount: 30000, type: "income" },
-    { id: uniqueId(), name: "shopping", amount: 10000, type: "expense" },
+
   ],
 };
 
@@ -30,6 +29,7 @@ function BtnListiners() {
 function addTransaction(name, price, type) {
   if (name !== "" && price !== "") {
     var transaction = {
+      id : uniqueId(),
       name: name,
       amount: parseInt(price),
       type: type,
